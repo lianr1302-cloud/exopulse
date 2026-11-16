@@ -1,4 +1,16 @@
-import { BookOpen, FlaskConical, GraduationCap, Microscope, Rocket } from "lucide-react";
+import {
+  Activity,
+  BadgeCheck,
+  BookOpen,
+  Database,
+  Download,
+  FlaskConical,
+  GraduationCap,
+  Layers,
+  Microscope,
+  Rocket,
+  Thermometer,
+} from "lucide-react";
 
 import { MOTION_INTERACTIVE } from "@/lib/ui-motion";
 
@@ -10,14 +22,45 @@ export function ResearchPlatformSections() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">About</p>
           <h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">ExoPulse</h2>
           <p className="mt-1 text-base text-accent sm:text-lg">
-            Secondary Eclipse &amp; Thermal Emission Profiler
+            SPHEREx Near-Infrared &amp; Exoplanet Thermal Profiler
           </p>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted">
-            ExoPulse is a NASA-aligned research environment for characterizing exoplanet atmospheres from
-            phase-folded photometry. The platform ingests confirmed systems through TAP, detrends orbital
-            signals, and extracts day-side thermal emission plus geometric albedo metrics with transparent,
-            documented methodology.
+            ExoPulse is an open-access, web-based astrophysics platform designed to democratize exoplanet
+            secondary eclipse phase-folding and multi-band near-infrared thermal emission profiling using
+            data from NASA&apos;s SPHEREx mission and open astronomical archives.
           </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <FeatureCard
+              icon={Database}
+              title="Instant NASA TAP API Ingestion"
+              body="Query 5,500+ confirmed exoplanets directly from the NASA Exoplanet Archive in 1–3 seconds."
+            />
+            <FeatureCard
+              icon={Activity}
+              title="Phase 0.5 Secondary Eclipse Detrending"
+              body="Automated phase-folding isolates micro-flux thermal dips buried in photon noise."
+            />
+            <FeatureCard
+              icon={Layers}
+              title="SPHEREx 102-Band Spectrophotometry"
+              body="Interactive slider across near-infrared channels from 0.75 µm to 5.0 µm."
+            />
+            <FeatureCard
+              icon={Thermometer}
+              title="Planck Blackbody Fitting"
+              body="Extract day-side equilibrium temperatures (T_day) and geometric albedos (A_g)."
+            />
+            <FeatureCard
+              icon={BadgeCheck}
+              title="AI Signal Quality Scorecard"
+              body="Random Forest classifier for S/N ≥ 5.4σ significance and candidate confidence (ROC-AUC = 0.927)."
+            />
+            <FeatureCard
+              icon={Download}
+              title="Open Data Export"
+              body="One-click structured JSON and CSV downloads for research proposals."
+            />
+          </div>
         </div>
       </section>
 
@@ -93,12 +136,19 @@ export function ResearchPlatformSections() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">NASA Data Provenance</p>
           <h2 className="mt-3 text-2xl font-semibold sm:text-3xl">Archive-linked science data</h2>
           <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted">
-            Live catalog and host parameters are retrieved through the NASA Exoplanet Archive TAP sync service
-            (Planetary Systems table, default_flag=1). Local JSON caches (eight curated hot Jupiters from
-            <code className="mx-1 rounded bg-card px-1.5 py-0.5 text-xs">data_engine.py</code>) supplement offline demos
-            when remote queries are rate-limited.
+            Live catalog and host parameters are retrieved through the NASA Exoplanet Archive TAP sync
+            service (Planetary Systems table, default_flag=1). Local JSON caches (eight curated hot Jupiters
+            from
+            <code className="mx-1 rounded bg-card px-1.5 py-0.5 text-xs">data_engine.py</code>) supplement
+            offline demos when remote queries are rate-limited.
           </p>
-          <p className="mt-3 text-sm text-muted">
+          <ol className="mt-5 max-w-3xl list-decimal space-y-1.5 pl-5 text-sm text-muted">
+            <li>NASA Exoplanet Archive TAP API (Caltech/IPAC)</li>
+            <li>MAST TESS SPOC PDCSAP Light Curves</li>
+            <li>Kepler Mission Open Data Photometry</li>
+            <li>SPHEREx Sky Survey Archives</li>
+          </ol>
+          <p className="mt-4 text-sm text-muted">
             Service endpoint:{" "}
             <a
               className="text-accent underline-offset-2 hover:underline"
@@ -112,6 +162,24 @@ export function ResearchPlatformSections() {
         </div>
       </section>
   </>
+  );
+}
+
+function FeatureCard({
+  icon: Icon,
+  title,
+  body,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  body: string;
+}) {
+  return (
+    <article className={`rounded-2xl border border-border bg-card/50 p-5 ${MOTION_INTERACTIVE}`}>
+      <Icon className="size-5 text-accent" aria-hidden />
+      <h3 className="mt-3 text-base font-medium">{title}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-muted">{body}</p>
+    </article>
   );
 }
 

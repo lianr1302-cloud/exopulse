@@ -376,7 +376,7 @@ export function ExoPulseDashboard({ dataset }: ExoPulseDashboardProps) {
               />
               <h2 className="text-3xl font-semibold tracking-tight">ExoPulse</h2>
             </div>
-            <p className="text-sm text-accent">Secondary Eclipse &amp; Thermal Emission Profiler</p>
+            <p className="text-sm text-accent">SPHEREx Near-Infrared &amp; Exoplanet Thermal Profiler</p>
             <p className="mt-2 max-w-xl text-sm text-muted">
               2026 NASA Space Apps — Planet X &amp; SPHEREx: query any confirmed world via TAP, fold
               photometry in 102 NIR channels, and export thermal retrieval metrics.

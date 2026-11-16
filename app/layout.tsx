@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ExoPulse — Secondary Eclipse & Thermal Emission Profiler",
-  description: "Phase-folded exoplanet photometry, NASA TAP integration, and thermal eclipse analysis.",
+  title: "ExoPulse — SPHEREx Near-Infrared & Exoplanet Thermal Profiler",
+  description:
+    "NASA Space Apps 2026 platform for SPHEREx near-infrared spectrophotometry, secondary eclipse phase-folding, and exoplanet thermal emission profiling.",
 };
 
 export default function RootLayout({

@@ -30,6 +30,11 @@ const NASA_DATA_LINKS = [
     href: "https://data.nasa.gov/dataset/kepler",
     primary: false,
   },
+  {
+    label: "SPHEREx Sky Survey",
+    href: "https://www.jpl.nasa.gov/missions/spherex/",
+    primary: false,
+  },
 ] as const;
 
 export function SiteHeader() {
@@ -42,7 +47,7 @@ export function SiteHeader() {
             <span className="leading-tight">
               <span className="block text-sm font-semibold tracking-wide sm:text-base">ExoPulse</span>
               <span className="hidden text-[10px] font-normal text-muted sm:block">
-                Secondary Eclipse &amp; Thermal Emission Profiler
+                SPHEREx Near-Infrared &amp; Exoplanet Thermal Profiler
               </span>
             </span>
           </Link>

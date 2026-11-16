@@ -54,14 +54,16 @@ export function LandingHero() {
         style={fadeStyle}
       >
         <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">ExoPulse Research Platform</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+            NASA International Space Apps Challenge 2026 · Planet X &amp; SPHEREx
+          </p>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">ExoPulse</h1>
           <p className="mt-3 text-lg text-accent sm:text-xl">
-            Secondary Eclipse &amp; Thermal Emission Profiler
+            SPHEREx Near-Infrared &amp; Exoplanet Thermal Profiler
           </p>
           <p className="mx-auto mt-6 max-w-2xl text-base text-muted sm:text-lg">
-            Explore confirmed worlds from the NASA Exoplanet Archive, fold their light curves, and export
-            publication-ready thermal metrics in minutes.
+            Open-access secondary eclipse phase-folding and 102-band SPHEREx thermal emission profiling
+            for 5,500+ confirmed exoplanets from NASA archives.
           </p>
           <a
             href="#dashboard"
